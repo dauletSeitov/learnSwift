@@ -1,3 +1,107 @@
+//variable declarations
+var str:String = String("hello world");
+var pi:Float = 3.1415914159;
+var m:Int? = 3;
+var n:Int!;
+
+//constants
+let const = 32;
+print ("\(const)");
+let constf:Float = 32;
+print ("\(constf)");
+
+//print 
+print("print string \(str)")
+print(pi)
+
+//if statment
+if true {
+	print("print true")
+}
+
+//if
+var res = (true) ? "true" : "false0";
+print(res) 
+
+//switch
+var switchParam = "";
+switch (switchParam) {
+	case "one": print(1); break;
+	case "two": print(2); break;
+	default : print(-1);
+}
+
+//auto unwrap
+var orig:String? = "sdsdd";
+if let newString = orig {
+	print(newString)
+} else {
+	print("nill")
+}
+
+//auto unwrap
+var myString:String! = "Hello, Swift 4!"
+if myString != nil {
+   print(myString)
+} else {
+   print("myString has nil value")
+}
+
+//for in
+var list = [12, 34, 54, 12, 32, 67, -45];
+for index in list{
+	print(index)
+}
+
+//for in
+var listString:[String] = ["a", "b", "c", "d", "e", "f", "g"];
+for index in listString{
+	print(index)
+}
+
+//while
+var iter = 0;
+while iter < 10 {
+	print("while not enoth \(iter)")
+	iter += 1;
+}
+
+//repeat
+var iter2 = 0; 
+repeat{
+	print("repeat not enoth \(iter2)")
+	iter2 += 1;
+} while (iter2 < 10)
+
+//string operators
+var strEx = String();
+if strEx.isEmpty{
+	print("isEmpty");
+}
+else {
+	print("strEx");
+}
+
+//string modifying
+strEx = "p" + " added";
+print("before strEx \(strEx)");
+
+//string legth
+print(strEx.count)
+if "dd" == "dd"{
+	print("dd")
+}
+//iterating over array
+for char in "helloworld"{
+	print(char, terminator: "#")
+}
+
+var row = "row";
+print(Int(row))
+print(row.reversed())
+
+print(row + "d")
+
 //arrays
 //init
 var arVar = [1,2,3,4,5,6]
@@ -87,5 +191,5 @@ func doIt2 (arra: [Int]) -> (large: Int, small: Int) {
 	}
 	return (la, sm)
 }
-var res = doIt2(arra: [40,12,-5,78,98])
-print("min: \(res.large) max: \(res.small)")
+var resp = doIt2(arra: [40,12,-5,78,98])
+print("min: \(resp.large) max: \(resp.small)")
