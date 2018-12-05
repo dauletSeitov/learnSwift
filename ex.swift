@@ -67,4 +67,25 @@ print("values: \([Int](dic3.values))")
 print("count: \(dic3.count)")
 print("count: \(dic3.isEmpty)")
 
+//methods
+func doIt (name: String) -> String {
+	return name + " hello"
+}
+print(doIt(name: "vasya"))
 
+func doIt2 (arra: [Int]) -> (large: Int, small: Int) {
+	print(arra.count)
+	var la = arra[0];
+	var sm = arra[0];
+	for i in arra[1..<arra.count] {
+		print("i: \(i)")
+		if (sm < i) {
+			sm = i
+		} else {
+			la = i 
+		}
+	}
+	return (la, sm)
+}
+var res = doIt2(arra: [40,12,-5,78,98])
+print("min: \(res.large) max: \(res.small)")
