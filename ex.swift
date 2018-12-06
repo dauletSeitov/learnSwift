@@ -193,3 +193,16 @@ func doIt2 (arra: [Int]) -> (large: Int, small: Int) {
 }
 var resp = doIt2(arra: [40,12,-5,78,98])
 print("min: \(resp.large) max: \(resp.small)")
+
+
+
+func addTwoInts(_ a: Int, _ b: Int) -> Int {
+    return a + b
+}
+
+//var mathFunction: (Int, Int) -> Int = addTwoInts
+
+func printMathResult(_ mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+    print("Result: \(mathFunction(a, b))")
+}
+printMathResult(addTwoInts, 3, 5)
