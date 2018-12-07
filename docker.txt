@@ -1,0 +1,23 @@
+
+sudo docker build -t core:vtb .
+
+sudo docker image save -o /tmp/vtb core:vtb
+sudo docker image load -i /tmp/vtb 
+
+sudo docker image save -o /tmp/postgresql postgresql:vtb
+sudo docker image load -i /tmp/postgresql 
+
+sudo docker-compose up
+
+
+
+
+sudo docker images
+sudo docker image rm core:vtb
+sudo docker image tag aerospike2010/pg:latest postgresql:vtb
+sudo docker build -f Docker.file -t name .
+sudo systemctl status docker
+sudo docker images
+sudo docker run -p 8080:8080 name
+sudo docker image rm -f name:latest
+

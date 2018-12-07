@@ -1,0 +1,17 @@
+version: '3'
+services:
+  database:
+    image: postgresql:vtb
+    ports:
+      - 5400:5432
+
+  core:
+    image: core:vtb
+    ports:
+      - 8080:8080
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://postgres:5432/digitalbank
+    links:
+      - "database:postgres"
+    depends_on:
+      - database

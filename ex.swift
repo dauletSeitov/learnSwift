@@ -193,3 +193,11 @@ func doIt2 (arra: [Int]) -> (large: Int, small: Int) {
 }
 var resp = doIt2(arra: [40,12,-5,78,98])
 print("min: \(resp.large) max: \(resp.small)")
+
+//function with optioanal return type
+func optionall(a :var, b :Int) -> (a: Int, b: Int)?{
+	return (a, b)
+}
+
+var respon = optionall(a:2, b:4);
+print(respon)
