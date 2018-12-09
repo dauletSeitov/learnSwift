@@ -200,17 +200,40 @@ func optionall(a :Int, b :Int) -> (a: Int, b: Int)?{
 }
 
 var respon = optionall(a:2, b:4);
-print(respon)
+print(respon)//prints optional
 
-
-
+//lyambda
 func addTwoInts(_ a: Int, _ b: Int) -> Int {
     return a + b
 }
 
 //var mathFunction: (Int, Int) -> Int = addTwoInts
 
-func printMathResult(_ mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+func printMathResult(_ mathFunction: (Int, Int) -> Int) {
+	var a = 2;
+	var b = 3;
     print("Result: \(mathFunction(a, b))")
 }
-printMathResult(addTwoInts, 3, 5)
+printMathResult(addTwoInts)
+
+//inout
+var a = 3;
+var b = 2;
+func swap(_ a: inout Int, _ b: inout Int) {
+	let reg = a;
+	a = b;
+	b = reg;	
+}
+
+print("a: \(a) + b: \(b)")
+swap(&a, &b)
+print("a: \(a) + b: \(b)")
+
+//lyamda sort//Closures
+func order (_ a :Int, b :Int) -> Bool{
+	return a > b;
+}
+let array = [2,4,7,2,5,7,3,5,8,9,3,6,2,1]; 
+print("sorted1: \(array.sorted(by: order))")
+
+print("sorted2: \(array.sorted(by: {(a :Int, b :Int) -> Bool in return a > b}))")
