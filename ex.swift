@@ -237,3 +237,70 @@ let array = [2,4,7,2,5,7,3,5,8,9,3,6,2,1];
 print("sorted1: \(array.sorted(by: order))")
 
 print("sorted2: \(array.sorted(by: {(a :Int, b :Int) -> Bool in return a > b}))")
+
+
+
+//---	swift enums  --------
+
+
+
+enum CardType{
+
+	case DEBET
+	case CREDIT
+	case VIRTUAL
+	case DEFAULT
+
+}
+
+var en = CardType.DEBET;
+print(en)
+
+
+
+switch en {
+
+	case .DEBET: print(en)
+	case .CREDIT: print(en)
+
+	default : print ("default \(en)")
+	
+}
+
+
+//------swift - struct - class 
+
+
+
+struct Structure {
+
+	var name:String;
+	init(name:String) {
+		self.name = name;
+	}	
+}
+
+
+class Class {
+
+	var name:String;	
+	init(name:String) {
+		self.name = name;
+	}
+}
+
+var struc = Structure(name:"Structure");
+var cl  = Class(name:"Class");
+
+
+
+print(struc)
+print(cl)
+
+func dooo (_ va: Class) {
+
+	va.name = "ddd";
+}
+
+
+
