@@ -97,7 +97,7 @@ for char in "helloworld"{
 }
 
 var row = "row";
-print(Int(row))
+print(Int(row)) 
 print(row.reversed())
 
 print(row + "d")
@@ -237,3 +237,94 @@ let array = [2,4,7,2,5,7,3,5,8,9,3,6,2,1];
 print("sorted1: \(array.sorted(by: order))")
 
 print("sorted2: \(array.sorted(by: {(a :Int, b :Int) -> Bool in return a > b}))")
+
+
+var opt = Int(row)
+
+print("Int(row) = ", opt)
+
+
+
+func quickSort(_ A: inout [Int], _ left:Int, _ right:Int){
+
+	if(right - left <= 0 ){
+		return;
+	}
+	else {
+		print("-----------------------")
+		print("A= ", A)
+
+		print("hello there", left, right)
+		var pivot:Int = A[right]
+		var pivotIndex:Int = partition(&A, left, right, pivot);
+		print("pivotIndex: ", pivotIndex)
+
+
+		quickSort(&A, left, pivotIndex - 1)
+		quickSort(&A, pivotIndex + 1, right)
+	}
+	//quickSort(arInt, )	
+}
+
+
+func partition(_ A: inout [Int], _ left:Int, _ right:Int, _ pivot:Int) -> Int {
+	
+	var leftTemp = left - 1;
+	var rightTemp = right;
+
+	while true {
+	
+		while(A[++leftTemp] < pivot){}
+
+		while(A[--rightTemp] > pivot && rightTemp > 0){}
+
+
+		if(leftTemp >= rightTemp){
+			break;
+		} else {
+			print("2 swap(\(leftTemp),\(rightTemp))")
+			swap(&A, leftTemp, rightTemp)
+
+		}
+
+
+	print("A= ", A)
+	}
+
+	print("1 swap(\(leftTemp),\(right))")
+	swap(&A, leftTemp, right)
+
+	return leftTemp;
+}
+
+prefix operator ++
+prefix operator --
+
+extension Int {
+	prefix static func ++(_ val: inout Int) -> Int {
+		val += 1
+		return val;
+	}
+}
+
+
+extension Int {
+	prefix static func --(_ val: inout Int) -> Int {
+		val -= 1
+		return val;
+	}
+}
+
+
+func swap(_ A: inout [Int], _ ind1:Int, _ ind2:Int){
+	let temp = A[ind1];
+	A[ind1] = A[ind2];
+	A[ind2] = temp;
+}
+
+print("----quickSort-implementation-----")
+var quickSortArray = [3,7,4,2,5];
+quickSort(&quickSortArray, 0, quickSortArray.count-1)
+print("quickSortArray= ", quickSortArray)
+
+
