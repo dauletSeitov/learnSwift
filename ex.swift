@@ -238,8 +238,6 @@ print("sorted1: \(array.sorted(by: order))")
 
 print("sorted2: \(array.sorted(by: {(a :Int, b :Int) -> Bool in return a > b}))")
 
-
-<<<<<<< HEAD
 var opt = Int(row)
 
 print("Int(row) = ", opt)
