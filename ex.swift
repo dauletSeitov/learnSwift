@@ -239,6 +239,7 @@ print("sorted1: \(array.sorted(by: order))")
 print("sorted2: \(array.sorted(by: {(a :Int, b :Int) -> Bool in return a > b}))")
 
 
+<<<<<<< HEAD
 var opt = Int(row)
 
 print("Int(row) = ", opt)
@@ -326,5 +327,68 @@ print("----quickSort-implementation-----")
 var quickSortArray = [3,7,4,2,5];
 quickSort(&quickSortArray, 0, quickSortArray.count-1)
 print("quickSortArray= ", quickSortArray)
+
+//---	swift enums  --------
+
+
+
+enum CardType{
+
+	case DEBET
+	case CREDIT
+	case VIRTUAL
+	case DEFAULT
+
+}
+
+var en = CardType.DEBET;
+print(en)
+
+
+
+switch en {
+
+	case .DEBET: print(en)
+	case .CREDIT: print(en)
+
+	default : print ("default \(en)")
+	
+}
+
+
+//------swift - struct - class 
+
+
+
+struct Structure {
+
+	var name:String;
+	init(name:String) {
+		self.name = name;
+	}	
+}
+
+
+class Class {
+
+	var name:String;	
+	init(name:String) {
+		self.name = name;
+	}
+}
+
+var struc = Structure(name:"Structure");
+var cl  = Class(name:"Class");
+
+
+
+print(struc)
+print(cl)
+
+func dooo (_ va: Class) {
+
+	va.name = "ddd";
+}
+
 
 
